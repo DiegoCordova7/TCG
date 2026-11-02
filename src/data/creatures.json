@@ -1,0 +1,48 @@
+{
+    "factions": {
+        "abyssales": {
+            "name": "Abyssales",
+            "color": "#06b6d4"
+        },
+        "aetherios": {
+            "name": "Aetherios",
+            "color": "#a855f7"
+        },
+        "colosos": {
+            "name": "Colosos",
+            "color": "#eab308"
+        },
+        "ferox": {
+            "name": "Ferox",
+            "color": "#ef4444"
+        },
+        "nemora": {
+            "name": "Nemora",
+            "color": "#22c55e"
+        },
+        "vesperos": {
+            "name": "Vesperos",
+            "color": "#ec4899"
+        }
+    },
+    "creatures": [
+        {
+            "id": "marelix",
+            "name": "Marelix",
+            "faction": "abyssales",
+            "hp": 105,
+            "attacks": [
+                {
+                    "name": "Oleada Abisal",
+                    "damage": 25,
+                    "description": "El agua golpea violentamente al enemigo."
+                },
+                {
+                    "name": "Tormenta Abisal",
+                    "damage": 35,
+                    "description": "Inflige 8 puntos de daño adicional al final de cada turno durante 2 turnos."
+                }
+            ]
+        }
+    ]
+}

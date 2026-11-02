@@ -1,0 +1,23 @@
+.hand-zone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(15, 23, 42, 0.6);
+    border-top: 1px solid rgba(56, 189, 248, 0.2);
+    overflow-x: auto;
+    min-height: 160px;
+}
+
+.hand-zone .card-container {
+    transform: scale(0.45);
+    transform-origin: bottom center;
+    transition: transform 0.2s ease, margin 0.2s ease;
+    cursor: pointer;
+}
+
+.hand-zone .card-container:hover {
+    transform: scale(0.55) translateY(-20px);
+    z-index: 50;
+}

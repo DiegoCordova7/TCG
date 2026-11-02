@@ -1,0 +1,284 @@
+{
+    "factions": {
+        "abyssales": {
+            "name": "Abyssales",
+            "color": "#06b6d4"
+        },
+        "aetherios": {
+            "name": "Aetherios",
+            "color": "#a855f7"
+        },
+        "colosos": {
+            "name": "Colosos",
+            "color": "#eab308"
+        },
+        "ferox": {
+            "name": "Ferox",
+            "color": "#ef4444"
+        },
+        "nemora": {
+            "name": "Nemora",
+            "color": "#22c55e"
+        },
+        "vesperos": {
+            "name": "Vesperos",
+            "color": "#ec4899"
+        }
+    },
+    "backgrounds": [
+        {
+            "file": "background-1",
+            "name": "Fondo 1"
+        },
+        {
+            "file": "background-2",
+            "name": "Fondo 2"
+        },
+        {
+            "file": "background-3",
+            "name": "Fondo 3"
+        },
+        {
+            "file": "background-4",
+            "name": "Fondo 4"
+        },
+        {
+            "file": "background-5",
+            "name": "Fondo 5"
+        },
+        {
+            "file": "background-6",
+            "name": "Fondo 6"
+        },
+        {
+            "file": "background-7",
+            "name": "Fondo 7"
+        },
+        {
+            "file": "background-8",
+            "name": "Fondo 8"
+        },
+        {
+            "file": "fondos",
+            "name": "Fondos generales"
+        }
+    ],
+    "creatures": [
+        {
+            "id": "marelix",
+            "name": "Marelix",
+            "faction": "abyssales",
+            "cost": 3,
+            "atk": 75,
+            "def": 60,
+            "skill": "Tormenta Abisal: daño continuo en el tablero."
+        },
+        {
+            "id": "nautilarca",
+            "name": "Nautilarca",
+            "faction": "abyssales",
+            "cost": 5,
+            "atk": 85,
+            "def": 90,
+            "skill": "Caparazón Antiguo: reduce el daño recibido un 30%."
+        },
+        {
+            "id": "sireneos",
+            "name": "Sireneos",
+            "faction": "abyssales",
+            "cost": 2,
+            "atk": 60,
+            "def": 55,
+            "skill": "Canto Hipnótico: inmoviliza a un enemigo 1 turno."
+        },
+        {
+            "id": "tidalon",
+            "name": "Tidalon",
+            "faction": "abyssales",
+            "cost": 6,
+            "atk": 95,
+            "def": 80,
+            "skill": "Marea Devastadora: aplasta la fila enemiga."
+        },
+        {
+            "id": "celestornis",
+            "name": "Celestornis",
+            "faction": "aetherios",
+            "cost": 5,
+            "atk": 90,
+            "def": 65,
+            "skill": "Rayo Celestial: ataca ignorando escudos."
+        },
+        {
+            "id": "glacivena",
+            "name": "Glacivena",
+            "faction": "aetherios",
+            "cost": 4,
+            "atk": 70,
+            "def": 85,
+            "skill": "Viento Helado: congela la habilidad del objetivo."
+        },
+        {
+            "id": "luminectar",
+            "name": "Luminectar",
+            "faction": "aetherios",
+            "cost": 2,
+            "atk": 40,
+            "def": 50,
+            "skill": "Luz Curativa: cura a todas tus criaturas."
+        },
+        {
+            "id": "solazur",
+            "name": "Solazur",
+            "faction": "aetherios",
+            "cost": 5,
+            "atk": 88,
+            "def": 75,
+            "skill": "Llama Etérea: quema al atacante."
+        },
+        {
+            "id": "galarum",
+            "name": "Galarum",
+            "faction": "colosos",
+            "cost": 6,
+            "atk": 80,
+            "def": 110,
+            "skill": "Muro de Granito: absorbe el daño dirigido a aliados."
+        },
+        {
+            "id": "rocantrun",
+            "name": "Rocantrun",
+            "faction": "colosos",
+            "cost": 5,
+            "atk": 85,
+            "def": 95,
+            "skill": "Pisotón Sísmico: aturde criaturas de menor costo."
+        },
+        {
+            "id": "terranox",
+            "name": "Terranox",
+            "faction": "colosos",
+            "cost": 7,
+            "atk": 100,
+            "def": 105,
+            "skill": "Furia de la Tierra: ataque según defensa restante."
+        },
+        {
+            "id": "titanombu",
+            "name": "Titanombu",
+            "faction": "colosos",
+            "cost": 6,
+            "atk": 75,
+            "def": 120,
+            "skill": "Raíces Inamovibles: inmune al desplazamiento."
+        },
+        {
+            "id": "leoncrita",
+            "name": "Leoncrita",
+            "faction": "ferox",
+            "cost": 4,
+            "atk": 85,
+            "def": 60,
+            "skill": "Garra Voraz: sangrado acumulativo."
+        },
+        {
+            "id": "sabrath",
+            "name": "Sabrath",
+            "faction": "ferox",
+            "cost": 5,
+            "atk": 95,
+            "def": 50,
+            "skill": "Ataque Furtivo: primer turno sin contraataque."
+        },
+        {
+            "id": "sombralix",
+            "name": "Sombralix",
+            "faction": "ferox",
+            "cost": 3,
+            "atk": 80,
+            "def": 55,
+            "skill": "Evasión de Sombra: +40% de esquiva."
+        },
+        {
+            "id": "umbrafenix",
+            "name": "Umbrafenix",
+            "faction": "ferox",
+            "cost": 7,
+            "atk": 110,
+            "def": 45,
+            "skill": "Renacimiento Oscuro: resucita una vez con 50% de vida."
+        },
+        {
+            "id": "pantanela",
+            "name": "Pantanela",
+            "faction": "nemora",
+            "cost": 3,
+            "atk": 65,
+            "def": 70,
+            "skill": "Esporas Venenosas: envenena progresivamente."
+        },
+        {
+            "id": "pantargon",
+            "name": "Pantargon",
+            "faction": "nemora",
+            "cost": 6,
+            "atk": 90,
+            "def": 85,
+            "skill": "Aliento de Ciénaga: reduce el ataque de rivales adyacentes."
+        },
+        {
+            "id": "riberin",
+            "name": "Riberin",
+            "faction": "nemora",
+            "cost": 2,
+            "atk": 50,
+            "def": 60,
+            "skill": "Camuflaje Fluvial: no puede ser objetivo de hechizos."
+        },
+        {
+            "id": "selvadraco",
+            "name": "Selvadraco",
+            "faction": "nemora",
+            "cost": 6,
+            "atk": 95,
+            "def": 90,
+            "skill": "Emboscada Espinosa: devuelve 25% del daño físico."
+        },
+        {
+            "id": "armantide",
+            "name": "Armantide",
+            "faction": "vesperos",
+            "cost": 4,
+            "atk": 70,
+            "def": 80,
+            "skill": "Escudo Crepuscular: protege de golpes críticos."
+        },
+        {
+            "id": "carabrix",
+            "name": "Carabrix",
+            "faction": "vesperos",
+            "cost": 4,
+            "atk": 85,
+            "def": 65,
+            "skill": "Destello Nocturno: reduce la precisión del atacante."
+        },
+        {
+            "id": "floralida",
+            "name": "Floralida",
+            "faction": "vesperos",
+            "cost": 3,
+            "atk": 60,
+            "def": 75,
+            "skill": "Polen Encantador: reduce los puntos de acción enemigos."
+        },
+        {
+            "id": "lumiprisma",
+            "name": "Lumiprisma",
+            "faction": "vesperos",
+            "cost": 6,
+            "atk": 105,
+            "def": 70,
+            "skill": "Refracción Prisma: refleja proyectiles al atacante."
+        }
+    ]
+}

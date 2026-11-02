@@ -1,0 +1,22 @@
+.attack-tooltip {
+    position: absolute;
+    bottom: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    background: #0f172a;
+    color: #ffffff;
+    border: 2px solid #38bdf8;
+    border-radius: 6px;
+    padding: 8px;
+    z-index: 10;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+    font-size: 0.75rem;
+    pointer-events: none;
+}
+
+.attack-tooltip h4 {
+    margin: 0 0 4px 0;
+    font-size: 0.8rem;
+    color: #38bdf8;
+}

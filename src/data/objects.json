@@ -1,0 +1,37 @@
+{
+    "equipment": [
+        {
+            "id": "colmillo_de_guerra",
+            "name": "Colmillo de guerra",
+            "type": "equipment",
+            "description": "Colmillo de una bestia ancestral, montado sobre una empuñadura de cuero oscuro y decorado con runas rojizas.",
+            "effect": "Aumenta el ATK de la criatura equipada en 8 puntos.",
+            "duration": "Mientras permanezca equipado."
+        },
+        {
+            "id": "amuleto_de_piedra_lunar",
+            "name": "Amuleto de piedra lunar",
+            "type": "equipment",
+            "description": "Colgante de cristal azulado rodeado por pequeñas piedras plateadas que emiten una luz tenue.",
+            "effect": "Reduce en 8 puntos el daño recibido por la criatura equipada.",
+            "duration": "Mientras permanezca equipado.",
+            "restriction": "No reduce el daño por debajo de 1."
+        }
+    ],
+    "consumables": [
+        {
+            "id": "pocion_de_vitalidad",
+            "name": "Poción de vitalidad",
+            "type": "consumable",
+            "description": "Frasco de vidrio con líquido rojo brillante y pequeñas partículas doradas.",
+            "effect": "Recupera 35 HP de una criatura aliada."
+        },
+        {
+            "id": "antidoto_silvestre",
+            "name": "Antídoto silvestre",
+            "type": "consumable",
+            "description": "Pequeño recipiente verde con extractos de hierbas, raíces y una hoja medicinal.",
+            "effect": "Elimina el envenenamiento y el sangrado de una criatura aliada."
+        }
+    ]
+}

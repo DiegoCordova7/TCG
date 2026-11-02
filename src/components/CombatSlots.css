@@ -1,0 +1,32 @@
+.combat-slots {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.slot {
+    width: 100px;
+    height: 140px;
+    border: 2px solid rgba(56, 189, 248, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.8);
+    font-size: 0.7rem;
+    color: #64748b;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.slot .card {
+    transform: scale(0.35);
+    transform-origin: center;
+    position: absolute;
+}
+
+.slot.active-slot {
+    border-color: #38bdf8;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
