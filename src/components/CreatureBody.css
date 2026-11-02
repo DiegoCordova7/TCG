@@ -33,13 +33,7 @@
 }
 
 .atk-name {
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-size: 0.100rem;
+    font-weight: 300;
     color: #000000;
-}
-
-.atk-dmg {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #dc2626;
 }

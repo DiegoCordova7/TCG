@@ -1,3 +1,5 @@
+import './CreatureBody.css';
+
 export default function CreatureBody({ attacks, onHoverAttack }) {
     return (
         <div className="attacks-list">
