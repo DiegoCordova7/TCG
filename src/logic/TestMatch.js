@@ -1,13 +1,5 @@
 import { GameMatch } from './GameMatch';
 
-/*const mockDeck = [
-    { id: 'marelix', name: 'Marelix', type: 'creature', faction: 'abyssales', hp: 105 },
-    { id: 'colmillo_de_guerra', name: 'Colmillo de guerra', type: 'equipment' },
-    { id: 'pocion_de_vitalidad', name: 'Poción de vitalidad', type: 'consumable' },
-    { id: 'criatura_2', name: 'Aetheris Minor', type: 'creature', faction: 'aetherios', hp: 90 },
-    { id: 'criatura_3', name: 'Coloso Bruto', type: 'creature', faction: 'colosos', hp: 130 },
-];*/
-
 const fullDeckP1 = Array.from({ length: 16 }, (_, i) => ({
     id: `card_${i}`,
     name: `Carta ${i}`,

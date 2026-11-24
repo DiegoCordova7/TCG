@@ -6,7 +6,8 @@
             "type": "equipment",
             "description": "Colmillo de una bestia ancestral, montado sobre una empuñadura de cuero oscuro y decorado con runas rojizas.",
             "effect": "Aumenta el ATK de la criatura equipada en 8 puntos.",
-            "duration": "Mientras permanezca equipado."
+            "duration": "Mientras permanezca equipado.",
+            "restriction": "Una criatura solo puede tener un objeto ofensivo equipado."
         },
         {
             "id": "amuleto_de_piedra_lunar",
@@ -16,6 +17,24 @@
             "effect": "Reduce en 8 puntos el daño recibido por la criatura equipada.",
             "duration": "Mientras permanezca equipado.",
             "restriction": "No reduce el daño por debajo de 1."
+        },
+        {
+            "id": "botas_del_vendaval",
+            "name": "Botas del vendaval",
+            "type": "equipment",
+            "description": "Botas ligeras fabricadas con cuero y plumas celestiales, rodeadas de pequeñas corrientes de aire.",
+            "effect": "Permite cambiar la criatura activa por otra de la banca sin consumir la acción de cambio.",
+            "duration": "Un cambio gratuito por partida.",
+            "restriction": "Se descarta después de utilizarse."
+        },
+        {
+            "id": "cristal_de_concentracion",
+            "name": "Cristal de concentración",
+            "type": "equipment",
+            "description": "Cristal violeta flotante dentro de un pequeño soporte metálico, con energía mágica girando en su interior.",
+            "effect": "Aumenta en 15 puntos el daño del siguiente ataque de la criatura equipada.",
+            "duration": "Un ataque.",
+            "restriction": "Se descarta después de activar su efecto."
         }
     ],
     "consumables": [
@@ -24,14 +43,66 @@
             "name": "Poción de vitalidad",
             "type": "consumable",
             "description": "Frasco de vidrio con líquido rojo brillante y pequeñas partículas doradas.",
-            "effect": "Recupera 35 HP de una criatura aliada."
+            "effect": "Recupera 35 HP de una criatura aliada.",
+            "restriction": "No puede superar su HP máximo."
         },
         {
             "id": "antidoto_silvestre",
             "name": "Antídoto silvestre",
             "type": "consumable",
             "description": "Pequeño recipiente verde con extractos de hierbas, raíces y una hoja medicinal.",
-            "effect": "Elimina el envenenamiento y el sangrado de una criatura aliada."
+            "effect": "Elimina el envenenamiento y el sangrado de una criatura aliada.",
+            "restriction": "No elimina otros efectos negativos."
+        },
+        {
+            "id": "elixir_purificador",
+            "name": "Elixir purificador",
+            "type": "consumable",
+            "description": "Frasco de cristal transparente con líquido azul luminoso y símbolos mágicos suspendidos.",
+            "effect": "Elimina todos los efectos negativos de una criatura aliada.",
+            "restriction": "No recupera HP ni elimina efectos positivos del enemigo."
+        },
+        {
+            "id": "fruto_de_energia",
+            "name": "Fruto de energía",
+            "type": "consumable",
+            "description": "Fruta fantástica de color naranja y violeta, con pequeñas descargas eléctricas recorriendo su superficie.",
+            "effect": "Recupera 20 HP y aumenta el ATK de una criatura aliada en 5 puntos durante 2 turnos.",
+            "restriction": "No puede superar el HP máximo."
+        }
+    ],
+    "artifacts": [
+        {
+            "id": "reloj_del_destino",
+            "name": "Reloj del destino",
+            "type": "artifact",
+            "description": "Reloj de bolsillo antiguo con engranajes dorados, arena luminosa y una esfera que parece contener una galaxia.",
+            "effect": "Permite recuperar una carta del descarte y devolverla a la mano.",
+            "restriction": "No permite recuperar otro Reloj del destino. Una utilización por partida."
+        },
+        {
+            "id": "pluma_del_renacimiento",
+            "name": "Pluma del renacimiento",
+            "type": "artifact",
+            "description": "Pluma gigantesca de color dorado y rojizo, rodeada de pequeñas llamas mágicas que no consumen su superficie.",
+            "effect": "Devuelve a una criatura aliada derrotada con 40 HP.",
+            "restriction": "Una utilización por partida. No puede revivir criaturas que hayan sido desterradas o retiradas permanentemente."
+        },
+        {
+            "id": "ojo_del_dragon",
+            "name": "Ojo del dragón",
+            "type": "artifact",
+            "description": "Gema roja con forma de ojo de reptil, rodeada por un marco de oro antiguo y pequeñas escamas.",
+            "effect": "Duplica el efecto numérico de un objeto consumible utilizado durante el mismo turno.",
+            "restriction": "No duplica resurrecciones, búsquedas de cartas ni otros artefactos legendarios. Una utilización por partida."
+        },
+        {
+            "id": "portal_dimensional",
+            "name": "Portal dimensional",
+            "type": "artifact",
+            "description": "Pequeño artefacto circular de metal oscuro con un núcleo morado que proyecta un portal lleno de estrellas.",
+            "effect": "Permite intercambiar la criatura activa por cualquier criatura de la banca y recuperar 15 HP a la criatura que entra al combate.",
+            "restriction": "Una utilización por partida."
         }
     ]
 }

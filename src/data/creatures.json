@@ -43,6 +43,312 @@
                     "description": "Inflige 8 puntos de daño adicional al final de cada turno durante 2 turnos."
                 }
             ]
+        },
+        {
+            "id": "nautilarca",
+            "name": "Nautilarca",
+            "faction": "abyssales",
+            "hp": 140,
+            "attacks": [
+                {
+                    "name": "Oleada Abisal",
+                    "damage": 25,
+                    "description": "Movimiento compartido de Abyssales."
+                },
+                {
+                    "name": "Caparazón Antiguo",
+                    "damage": 15,
+                    "description": "Reduce un 30 % el daño recibido durante los siguientes 2 turnos."
+                }
+            ]
+        },
+        {
+            "id": "sireneos",
+            "name": "Sireneos",
+            "faction": "abyssales",
+            "hp": 115,
+            "attacks": [
+                {
+                    "name": "Oleada Abisal",
+                    "damage": 25,
+                    "description": "Movimiento compartido de Abyssales."
+                },
+                {
+                    "name": "Canto Hipnótico",
+                    "damage": 10,
+                    "description": "Inmoviliza al enemigo durante su siguiente turno."
+                }
+            ]
+        },
+        {
+            "id": "celestornis",
+            "name": "Celestornis",
+            "faction": "aetherios",
+            "hp": 105,
+            "attacks": [
+                {
+                    "name": "Ráfaga Celestial",
+                    "damage": 25,
+                    "description": "Una corriente de viento concentrado golpea al adversario."
+                },
+                {
+                    "name": "Rayo Celestial",
+                    "damage": 40,
+                    "description": "Descarga luminosa que atraviesa las defensas e ignora los efectos de escudos que reduzcan daño."
+                }
+            ]
+        },
+        {
+            "id": "glacivena",
+            "name": "Glacivena",
+            "faction": "aetherios",
+            "hp": 135,
+            "attacks": [
+                {
+                    "name": "Ráfaga Celestial",
+                    "damage": 25,
+                    "description": "Movimiento compartido de Aetherios."
+                },
+                {
+                    "name": "Viento Helado",
+                    "damage": 20,
+                    "description": "Bloquea la habilidad especial del enemigo durante su siguiente turno."
+                }
+            ]
+        },
+        {
+            "id": "luminectar",
+            "name": "Luminectar",
+            "faction": "aetherios",
+            "hp": 115,
+            "attacks": [
+                {
+                    "name": "Ráfaga Celestial",
+                    "damage": 25,
+                    "description": "Movimiento compartido de Aetherios."
+                },
+                {
+                    "name": "Luz Curativa",
+                    "damage": 0,
+                    "description": "Recupera 20 HP a todas las criaturas aliadas, incluida la activa."
+                }
+            ]
+        },
+        {
+            "id": "rocantrun",
+            "name": "Rocantrun",
+            "faction": "colosos",
+            "hp": 110,
+            "attacks": [
+                {
+                    "name": "Impacto Telúrico",
+                    "damage": 25,
+                    "description": "Un golpe de fuerza bruta contra el enemigo."
+                },
+                {
+                    "name": "Pisotón Sísmico",
+                    "damage": 35,
+                    "description": "El impacto aturde al enemigo, impidiendo que utilice su movimiento individual durante su siguiente turno."
+                }
+            ]
+        },
+        {
+            "id": "galarum",
+            "name": "Galarum",
+            "faction": "colosos",
+            "hp": 140,
+            "attacks": [
+                {
+                    "name": "Impacto Telúrico",
+                    "damage": 25,
+                    "description": "Movimiento compartido de Colosos."
+                },
+                {
+                    "name": "Muro de Granito",
+                    "damage": 15,
+                    "description": "Durante 2 turnos, reduce un 25 % el daño recibido por las criaturas aliadas."
+                }
+            ]
+        },
+        {
+            "id": "titanombu",
+            "name": "Titanombu",
+            "faction": "colosos",
+            "hp": 120,
+            "attacks": [
+                {
+                    "name": "Impacto Telúrico",
+                    "damage": 25,
+                    "description": "Movimiento compartido de Colosos."
+                },
+                {
+                    "name": "Raíces Inamovibles",
+                    "damage": 0,
+                    "description": "Recupera 15 HP a una criatura aliada en banca y le concede un escudo de 15 puntos hasta el siguiente turno."
+                }
+            ]
+        },
+        {
+            "id": "leoncrita",
+            "name": "Leoncrita",
+            "faction": "ferox",
+            "hp": 105,
+            "attacks": [
+                {
+                    "name": "Zarpazo Salvaje",
+                    "damage": 25,
+                    "description": "Un golpe rápido con las garras."
+                },
+                {
+                    "name": "Garra Voraz",
+                    "damage": 35,
+                    "description": "Provoca sangrado durante 2 turnos (el objetivo pierde 8 HP al final de cada turno)."
+                }
+            ]
+        },
+        {
+            "id": "sombralix",
+            "name": "Sombralix",
+            "faction": "ferox",
+            "hp": 135,
+            "attacks": [
+                {
+                    "name": "Zarpazo Salvaje",
+                    "damage": 25,
+                    "description": "Movimiento compartido de Ferox."
+                },
+                {
+                    "name": "Evasión de Sombra",
+                    "damage": 0,
+                    "description": "Obtiene un 40 % de probabilidad de esquivar el siguiente ataque enemigo."
+                }
+            ]
+        },
+        {
+            "id": "umbrafenix",
+            "name": "Umbrafenix",
+            "faction": "ferox",
+            "hp": 115,
+            "attacks": [
+                {
+                    "name": "Zarpazo Salvaje",
+                    "damage": 25,
+                    "description": "Movimiento compartido de Ferox."
+                },
+                {
+                    "name": "Renacimiento Oscuro",
+                    "damage": 0,
+                    "description": "Recupera 30 HP de una criatura aliada en banca o la revive con 30 HP (solo una vez por partida)."
+                }
+            ]
+        },
+        {
+            "id": "pantanela",
+            "name": "Pantanela",
+            "faction": "nemora",
+            "hp": 105,
+            "attacks": [
+                {
+                    "name": "Mordida Pantanosa",
+                    "damage": 25,
+                    "description": "Mordida cargada de energía del pantano."
+                },
+                {
+                    "name": "Esporas Venenosas",
+                    "damage": 30,
+                    "description": "Envenena al enemigo durante 2 turnos (el objetivo pierde 8 HP al final de cada turno)."
+                }
+            ]
+        },
+        {
+            "id": "pantargon",
+            "name": "Pantargon",
+            "faction": "nemora",
+            "hp": 140,
+            "attacks": [
+                {
+                    "name": "Mordida Pantanosa",
+                    "damage": 25,
+                    "description": "Movimiento compartido de Némora."
+                },
+                {
+                    "name": "Aliento de Ciénaga",
+                    "damage": 20,
+                    "description": "Reduce el ATK del enemigo en 20 % durante 2 turnos."
+                }
+            ]
+        },
+        {
+            "id": "riberin",
+            "name": "Riberin",
+            "faction": "nemora",
+            "hp": 115,
+            "attacks": [
+                {
+                    "name": "Mordida Pantanosa",
+                    "damage": 25,
+                    "description": "Movimiento compartido de Némora."
+                },
+                {
+                    "name": "Camuflaje Fluvial",
+                    "damage": 0,
+                    "description": "Elimina un efecto negativo de una criatura aliada en banca y le concede un escudo de 15 puntos."
+                }
+            ]
+        },
+        {
+            "id": "lumiprisma",
+            "name": "Lumiprisma",
+            "faction": "vesperos",
+            "hp": 105,
+            "attacks": [
+                {
+                    "name": "Destello Crepuscular",
+                    "damage": 25,
+                    "description": "Descarga de energía luminosa."
+                },
+                {
+                    "name": "Refracción Prisma",
+                    "damage": 35,
+                    "description": "Devuelve al enemigo 10 puntos de daño de su próximo ataque."
+                }
+            ]
+        },
+        {
+            "id": "armantide",
+            "name": "Armantide",
+            "faction": "vesperos",
+            "hp": 135,
+            "attacks": [
+                {
+                    "name": "Destello Crepuscular",
+                    "damage": 25,
+                    "description": "Movimiento compartido de Vésperos."
+                },
+                {
+                    "name": "Escudo Crepuscular",
+                    "damage": 15,
+                    "description": "Reduce un 30 % el daño del siguiente ataque recibido y anula bonificaciones críticas."
+                }
+            ]
+        },
+        {
+            "id": "floralida",
+            "name": "Floralida",
+            "faction": "vesperos",
+            "hp": 115,
+            "attacks": [
+                {
+                    "name": "Destello Crepuscular",
+                    "damage": 25,
+                    "description": "Movimiento compartido de Vésperos."
+                },
+                {
+                    "name": "Polen Encantador",
+                    "damage": 0,
+                    "description": "Recupera 20 HP a una criatura aliada en banca y reduce el daño de su próximo ataque recibido en 10 puntos."
+                }
+            ]
         }
     ]
 }

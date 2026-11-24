@@ -1,0 +1,60 @@
+.hand-zone {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 210px;
+    padding: 15px 20px 10px;
+    background: rgba(15, 23, 42, 0.6);
+    border-top: 1px solid rgba(56, 189, 248, 0.2);
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.hand-fan-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+}
+
+/* Espacio real que ocupa cada carta en el flujo (300x420 escalado a 0.52 ≈ 156x218) */
+.hand-card-slot {
+    position: relative;
+    width: 156px;
+    height: 218px;
+    margin: 0 -22px;
+    /* Solapamiento elegante tipo abanico */
+    cursor: grab;
+    transform: translateY(var(--card-y, 0px)) rotate(var(--card-rotate, 0deg));
+    transform-origin: bottom center;
+    transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), margin 0.2s ease;
+}
+
+.hand-card-slot:active {
+    cursor: grabbing;
+}
+
+/* Al pasar el mouse, la carta se endereza, sube y se destaca por encima de las demás */
+.hand-card-slot:hover {
+    transform: translateY(-35px) rotate(0deg) scale(1.15);
+    z-index: 100 !important;
+    margin: 0 10px;
+}
+
+/* Escala la carta base de 300x420px al tamaño exacto del slot */
+.hand-card-scaler {
+    width: 300px;
+    height: 420px;
+    transform: scale(0.52);
+    transform-origin: top left;
+    pointer-events: none;
+    /* Evita que las capas internas interfieran con el drag del slot */
+}
+
+.hand-placeholder {
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 600;
+    align-self: center;
+}

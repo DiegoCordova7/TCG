@@ -1,0 +1,113 @@
+.combat-slots {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.bench-slots-group {
+    display: flex;
+    gap: 8px;
+}
+
+div.slot,
+div.slot.active-slot,
+.player-field div.slot,
+.opponent-field div.slot {
+    width: 120px !important;
+    height: 165px !important;
+    min-width: 120px !important;
+    min-height: 165px !important;
+    max-width: 120px !important;
+    max-height: 165px !important;
+    border: 2px dashed rgba(56, 189, 248, 0.4) !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(15, 23, 42, 0.85) !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    color: #64748b !important;
+    text-align: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+div.slot.active-slot {
+    border: 2px solid #38bdf8 !important;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4) !important;
+    background: rgba(15, 23, 42, 0.95) !important;
+}
+
+div.card-scaler {
+    width: 300px !important;
+    height: 420px !important;
+    transform: scale(0.38) !important;
+    transform-origin: center center !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+}
+
+@keyframes cardShakeSlot {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-10px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(10px);
+    }
+}
+
+div.slot.active-slot {
+    overflow: visible !important;
+}
+
+@keyframes cardAttackLunge {
+    0% {
+        transform: translateY(0);
+    }
+
+    35% {
+        transform: translateY(-65px) scale(1.06);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.slot .card.is-attacking {
+    animation: cardAttackLunge 0.45s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    z-index: 40;
+}
+
+@keyframes cardShakeSlot {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-14px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(14px);
+    }
+}
+
+.slot .card.is-shaking {
+    animation: cardShakeSlot 0.4s ease-in-out !important;
+}

@@ -1,0 +1,13 @@
+{
+    "fields": [
+        {
+            "id": "abyssales",
+            "name": "Santuario Abisal",
+            "type": "field",
+            "faction": "abyssales",
+            "cardImage": "/assets/fields/Abyssales_Campo.png",
+            "boardBgImage": "/assets/fields/abyssal.jpeg",
+            "description": "Todas las criaturas Abyssales obtienen +10 de daño en sus ataques y recuperan 5 HP al final de cada turno."
+        }
+    ]
+}

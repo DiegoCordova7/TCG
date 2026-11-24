@@ -1,44 +1,56 @@
-export const player1Deck = [
-    {
-        id: 'marelix',
-        name: 'Marelix',
-        type: 'creature',
-        faction: 'abyssales',
-        hp: 105,
-        attacks: [
-            { name: 'Hidro-corte', damage: '30' },
-            { name: 'Ola Abisal', damage: '50' }
-        ]
-    },
-    {
-        id: 'nautilarca',
-        name: 'Guardían Abisal',
-        type: 'creature',
-        faction: 'abyssales',
-        hp: 120,
-        attacks: [{ name: 'Impacto Coral', damage: '40' }]
-    },
-    { id: 'p1_card_3', name: 'Colmillo de Guerra', type: 'equipment', faction: 'abyssales' },
-    { id: 'p1_card_4', name: 'Poción de Vitalidad', type: 'consumable', faction: 'neutral' },
-    { id: 'p1_card_5', name: 'Escudo de Coral', type: 'equipment', faction: 'abyssales' },
-    { id: 'p1_card_6', name: 'Elixir de Maná', type: 'consumable', faction: 'neutral' },
-    { id: 'p1_card_7', name: 'Tridente Menor', type: 'equipment', faction: 'abyssales' },
-    { id: 'p1_card_8', name: 'Ración de Viaje', type: 'consumable', faction: 'neutral' },
-    { id: 'p1_card_9', name: 'Amuleto Antiguo', type: 'equipment', faction: 'neutral' },
-    { id: 'p1_card_10', name: 'Piedra de Foco', type: 'equipment', faction: 'neutral' },
-    { id: 'p1_card_11', name: 'Baya Curativa', type: 'consumable', faction: 'neutral' },
-    { id: 'p1_card_12', name: 'Perla Brillante', type: 'consumable', faction: 'abyssales' },
-    { id: 'p1_card_13', name: 'Capa de Niebla', type: 'equipment', faction: 'neutral' },
-    { id: 'p1_card_14', name: 'Polvo Estelar', type: 'consumable', faction: 'neutral' },
-    { id: 'p1_card_15', name: 'Daga Oxidada', type: 'equipment', faction: 'neutral' },
-    { id: 'p1_card_16', name: 'Amuleto de Suerte', type: 'equipment', faction: 'neutral' }
-];
+import creaturesData from '../data/creatures.json';
+import objectsData from '../data/objects.json';
 
-export const player2Deck = Array.from({ length: 16 }, (_, i) => ({
-    id: `p2_card_${i + 1}`,
-    name: i === 0 ? 'Aetheris Minor' : `Carta Rival ${i + 1}`,
-    type: i === 0 ? 'creature' : 'consumable',
-    faction: 'aetherios',
-    hp: i === 0 ? 90 : undefined,
-    attacks: i === 0 ? [{ name: 'Rayo Etéreo', damage: '35' }] : []
-}));
+const getCreatureTemplate = (id) => {
+    const creature = creaturesData.creatures.find(c => c.id === id);
+    if (!creature) return null;
+
+    return {
+        id: creature.id,
+        name: creature.name,
+        type: 'creature',
+        faction: creature.faction,
+        hp: creature.hp,
+        attacks: creature.attacks || []
+    };
+};
+
+const getObjectTemplate = (type, id) => {
+    const list = objectsData[type];
+    if (!list) return null;
+    const item = list.find(i => i.id === id);
+    if (!item) return null;
+
+    return {
+        id: item.id,
+        name: item.name,
+        type: type,
+        faction: 'neutral',
+        description: item.description,
+        effect: item.effect,
+        duration: item.duration,
+        restriction: item.restriction
+    };
+};
+
+export const player1Deck = [
+    getCreatureTemplate('marelix'),
+    getCreatureTemplate('nautilarca'),
+    getCreatureTemplate('celestornis'),
+    getObjectTemplate('consumable', 'pocion_de_vitalidad'),
+    getObjectTemplate('equipment', 'colmillo_de_guerra'),
+    getCreatureTemplate('lumiprisma'),
+    getObjectTemplate('consumable', 'antidoto_silvestre'),
+    getObjectTemplate('artifact', 'reloj_del_destino')
+].filter(Boolean);
+
+export const player2Deck = [
+    getCreatureTemplate('galarum'),
+    getCreatureTemplate('titanombu'),
+    getCreatureTemplate('leoncrita'),
+    getObjectTemplate('equipment', 'amuleto_de_piedra_lunar'),
+    getObjectTemplate('consumable', 'fruto_de_energia'),
+    getCreatureTemplate('pantanela'),
+    getObjectTemplate('artifact', 'ojo_del_dragon'),
+    getObjectTemplate('equipment', 'cristal_de_concentracion')
+].filter(Boolean).map((card) => ({ ...card, id: card.id }));

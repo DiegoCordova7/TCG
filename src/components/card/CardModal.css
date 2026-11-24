@@ -1,0 +1,57 @@
+.card-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.card-modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-modal-scale-wrapper {
+    transform: scale(1.6);
+    /* Amplía considerablemente el tamaño de la carta */
+    transform-origin: center;
+    margin: 40px 0;
+}
+
+.card-modal-close {
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background 0.2s;
+}
+
+.card-modal-close:hover {
+    background: #dc2626;
+}
+
+.card-modal-hint {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-top: 30px;
+}

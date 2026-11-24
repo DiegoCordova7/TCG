@@ -1,0 +1,48 @@
+.creature-attacks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    padding: 4px;
+}
+
+.creature-attack-item {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.2s;
+}
+
+.creature-attack-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.attack-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #f8fafc;
+}
+
+.attack-damage {
+    color: #38bdf8;
+}
+
+.attack-description {
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    margin: 4px 0 0 0;
+    line-height: 1.2;
+}
+
+.creature-attack-item.attack-clickable {
+    cursor: pointer;
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+.creature-attack-item.attack-clickable:hover {
+    background: rgba(56, 189, 248, 0.2);
+}
