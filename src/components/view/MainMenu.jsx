@@ -20,6 +20,12 @@ export default function MainMenu({ onNavigate }) {
                     >
                         Compendio de Cartas
                     </button>
+                    <button
+                        className="menu-btn secondary-btn"
+                        onClick={() => onNavigate('gacha')}
+                    >
+                        Gacha
+                    </button>
                 </div>
             </div>
         </div>

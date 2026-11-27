@@ -1,0 +1,133 @@
+/*
+ * Contenedor de pantalla completa.
+ * position: fixed + inset: 0 lo ajusta exactamente al tamaño de la ventana.
+ * (Con width: 100vw se sumaba el margen del <body> y aparecía
+ * desplazamiento horizontal.) Si el contenido es más alto, se desplaza
+ * verticalmente dentro del propio contenedor.
+ */
+.gacha-container {
+    position: fixed;
+    inset: 0;
+    background-color: #0f172a;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    color: #f8fafc;
+}
+
+/* Cabecera: botón de regreso + título y descripción */
+.gacha-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+.gacha-back-btn {
+    background: #334155;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.gacha-back-btn:hover {
+    background: #475569;
+}
+
+.gacha-heading {
+    text-align: left;
+}
+
+.gacha-title {
+    margin: 0 0 4px;
+    color: #38bdf8;
+}
+
+.gacha-subtitle {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
+
+/* ===== Zona de invocación: debajo del banner ===== */
+.gacha-summon-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.gacha-summon-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Mismo estilo base que los botones principales del menú */
+.gacha-summon-btn {
+    min-width: 170px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    background: #2563eb;
+    border: 1px solid #38bdf8;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.gacha-summon-btn:hover {
+    background: #1d4ed8;
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+}
+
+/* La invocación doble usa los tonos dorado y violeta del banner */
+.gacha-summon-btn-double {
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+    border-color: #facc15;
+}
+
+.gacha-summon-btn-double:hover {
+    background: linear-gradient(135deg, #6d28d9, #1d4ed8);
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.5);
+}
+
+/* Botones bloqueados mientras se realiza una invocación */
+.gacha-summon-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.gacha-summon-note {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* Pantallas pequeñas: la cabecera se apila verticalmente */
+@media (max-width: 700px) {
+    .gacha-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gacha-summon-btn {
+        min-width: 0;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}

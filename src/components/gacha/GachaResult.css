@@ -1,0 +1,311 @@
+/* =====================================================
+ * Modal de invocación: portal + revelación de cartas.
+ * Todo se anima con CSS, sin bibliotecas.
+ * ===================================================== */
+
+/* Fondo oscurecido que cubre toda la pantalla (mismo z-index que CardModal) */
+.gacha-result-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background: radial-gradient(ellipse at center, rgba(49, 46, 129, 0.85) 0%, rgba(2, 6, 23, 0.97) 70%);
+    backdrop-filter: blur(4px);
+    animation: overlayFadeIn 0.25s ease-out;
+}
+
+@keyframes overlayFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ===== 1. Portal de invocación ===== */
+.summon-portal {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    margin: auto;
+    /* Al terminar esta animación, React pasa a la fase de resultados */
+    animation: portalSequence 1.3s ease-in-out forwards;
+}
+
+@keyframes portalSequence {
+    0% { transform: scale(0.2); opacity: 0; }
+    25% { transform: scale(1); opacity: 1; }
+    75% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(2.2); opacity: 0; }
+}
+
+.summon-portal-ring {
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* Anillo exterior con los colores de las seis facciones */
+.summon-portal-ring-outer {
+    inset: 0;
+    background: conic-gradient(#38bdf8, #06b6d4, #eab308, #ef4444, #22c55e, #ec4899, #38bdf8);
+    -webkit-mask: radial-gradient(circle, transparent 62%, black 64%);
+    mask: radial-gradient(circle, transparent 62%, black 64%);
+    filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.9));
+    animation: portalSpin 2.5s linear infinite;
+}
+
+/* Anillo interior dorado, gira en sentido contrario */
+.summon-portal-ring-inner {
+    inset: 32px;
+    border: 3px dashed #facc15;
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.6), inset 0 0 15px rgba(250, 204, 21, 0.4);
+    animation: portalSpin 1.8s linear infinite reverse;
+}
+
+/* Núcleo de energía que late */
+.summon-portal-core {
+    position: absolute;
+    inset: 70px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff 0%, #38bdf8 35%, #7c3aed 65%, transparent 72%);
+    animation: corePulse 0.6s ease-in-out infinite alternate;
+}
+
+.summon-portal-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -50px;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #e9d5ff;
+    text-shadow: 0 0 10px #a855f7;
+}
+
+@keyframes portalSpin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes corePulse {
+    from { transform: scale(0.85); opacity: 0.8; }
+    to { transform: scale(1.1); opacity: 1; }
+}
+
+/* ===== 2. Pantalla de resultados ===== */
+.gacha-result-content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Destello de luz al abrirse el portal */
+.gacha-result-flash {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(168, 85, 247, 0.5) 40%, transparent 75%);
+    animation: flashOut 0.6s ease-out forwards;
+}
+
+@keyframes flashOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.gacha-result-title {
+    margin: 0;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #f8fafc;
+    text-shadow: 0 0 12px rgba(168, 85, 247, 0.8), 0 0 24px rgba(56, 189, 248, 0.4);
+    animation: textAppear 0.4s ease-out both;
+}
+
+/*
+ * Contenedor de las cartas.
+ * --card-scale define el tamaño de la carta (1 = 300 × 420 px).
+ */
+.revealed-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.revealed-cards.is-single { --card-scale: 1.1; }
+.revealed-cards.is-double { --card-scale: 0.95; }
+
+/* Cada carta revelada: entra desde abajo con su retraso propio */
+.revealed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: cardRise 0.45s ease-out var(--reveal-delay) both;
+}
+
+@keyframes cardRise {
+    from { opacity: 0; transform: translateY(40px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Reserva el tamaño real de la carta escalada para que no se encimen */
+.revealed-card-slot {
+    position: relative;
+    width: calc(300px * var(--card-scale));
+    height: calc(420px * var(--card-scale));
+}
+
+/* Brillo con el color de la facción, aparece después del volteo */
+.revealed-card-slot::before {
+    content: '';
+    position: absolute;
+    inset: -12%;
+    border-radius: 50%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--faction-main) 55%, transparent) 0%, transparent 70%);
+    animation:
+        glowAppear 0.5s ease-out calc(var(--reveal-delay) + 1s) both,
+        glowPulse 2s ease-in-out calc(var(--reveal-delay) + 1.5s) infinite;
+}
+
+@keyframes glowAppear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes glowPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+}
+
+/* La carta original mide 300 × 420 px; aquí se escala sin modificar CreatureCard */
+.revealed-card-scaler {
+    position: relative;
+    z-index: 1;
+    width: 300px;
+    height: 420px;
+    transform: scale(var(--card-scale));
+    transform-origin: top left;
+    perspective: 1200px;
+}
+
+/* Elemento que gira: empieza mostrando el reverso y termina en el frente */
+.revealed-card-flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: cardFlip 0.7s ease-in-out calc(var(--reveal-delay) + 0.4s) both;
+}
+
+@keyframes cardFlip {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(180deg); }
+}
+
+.revealed-card-face {
+    position: absolute;
+    inset: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* El frente empieza girado: queda visible cuando el flipper llega a 180° */
+.revealed-card-front {
+    transform: rotateY(180deg);
+}
+
+/* Nombre y facción debajo de la carta */
+.revealed-card-name,
+.revealed-card-faction {
+    margin: 0;
+    text-align: center;
+    animation: textAppear 0.4s ease-out calc(var(--reveal-delay) + 1s) both;
+}
+
+.revealed-card-name {
+    margin-top: 14px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #f8fafc;
+}
+
+/* Usa los colores de facción definidos en GachaBanner.css */
+.revealed-card-faction {
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--faction-accent);
+    text-shadow: 0 0 8px var(--faction-main);
+}
+
+@keyframes textAppear {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botón Continuar: aparece al terminar la última revelación */
+.gacha-continue-btn {
+    min-width: 200px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+    border: 1px solid #facc15;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: continueAppear 0.3s ease-out var(--continue-delay) both;
+}
+
+.gacha-continue-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.5);
+}
+
+/* visibility evita que se pueda pulsar antes de que aparezca */
+@keyframes continueAppear {
+    from { opacity: 0; visibility: hidden; }
+    to { opacity: 1; visibility: visible; }
+}
+
+/* ===== Adaptación a distintas pantallas ===== */
+
+/* Pantallas de poca altura (laptops): cartas un poco más pequeñas */
+@media (max-height: 820px) {
+    .revealed-cards.is-single { --card-scale: 0.9; }
+    .revealed-cards.is-double { --card-scale: 0.85; }
+}
+
+@media (max-height: 680px) {
+    .revealed-cards.is-single { --card-scale: 0.75; }
+    .revealed-cards.is-double { --card-scale: 0.7; }
+
+    .gacha-result-content { gap: 12px; }
+}
+
+/* Pantallas angostas (celulares): las dos cartas siguen lado a lado */
+@media (max-width: 700px) {
+    .revealed-cards { gap: 16px; }
+    .revealed-cards.is-single { --card-scale: 0.8; }
+    .revealed-cards.is-double { --card-scale: 0.52; }
+
+    .gacha-result-title { font-size: 1.15rem; }
+    .revealed-card-name { font-size: 1rem; }
+    .revealed-card-faction { font-size: 0.7rem; letter-spacing: 1px; }
+
+    .summon-portal {
+        width: 180px;
+        height: 180px;
+    }
+
+    .summon-portal-ring-inner { inset: 24px; }
+    .summon-portal-core { inset: 52px; }
+}
